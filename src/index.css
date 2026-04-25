@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+    
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+    /* Background: soft cream (#FAF7F2) */
+    --background: #FAF7F2;
+    /* Text: deep warm brown (#3E2F25) */
+    --foreground: #3E2F25;
+    
+    --card: #FAF7F2;
+    --card-foreground: #3E2F25;
+    
+    --popover: #FAF7F2;
+    --popover-foreground: #3E2F25;
+    
+    /* Primary: light caramel (#D8B08C) */
+    --primary: #D8B08C;
+    --primary-foreground: #3E2F25;
+    
+    /* Secondary: muted brown (#6B4F3A) */
+    --secondary: #6B4F3A;
+    --secondary-foreground: #FAF7F2;
+    
+    --muted: #EFEBE5;
+    --muted-foreground: #6B4F3A;
+    
+    /* Accent: subtle gold (#C6A769) */
+    --accent: #C6A769;
+    --accent-foreground: #FAF7F2;
+    
+    --destructive: #A64444;
+    --destructive-foreground: #FAF7F2;
+    
+    --border: #E8E2D9;
+    --input: #E8E2D9;
+    --ring: #C6A769;
+    
+    --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
